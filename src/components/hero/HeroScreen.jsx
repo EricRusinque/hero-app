@@ -1,3 +1,4 @@
+import { HeroList } from "./HeroList";
 
 export const HeroScreen = () => {
     return (

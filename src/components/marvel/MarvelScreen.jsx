@@ -1,9 +1,17 @@
 import React from 'react';
+import { HeroList } from '../hero/HeroList';
 
 export const MarvelScreen = () => {
     return (
-        <div>
-            <h1>Marvel Screen</h1>
-        </div>
+        <>
+            <h1 style={{
+                textAlign:"center"
+            }}>Marvel Screen</h1>
+            <hr/>
+            <div>
+                <HeroList publisher={'Marvel Comics'}/>
+            </div>
+
+        </>
     )
 };
