@@ -6,7 +6,7 @@ export const MarvelScreen = () => {
         <>
             <h1 style={{
                 textAlign:"center"
-            }}>Marvel Screen</h1>
+            }}>Marvel Characters</h1>
             <hr/>
             <div>
                 <HeroList publisher={'Marvel Comics'}/>

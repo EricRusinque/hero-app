@@ -6,27 +6,27 @@ export const HeroCard = ({
     superhero,
     publisher,
     alter_ego,
-    first_apprearance,
+    first_appearance,
     characters
 }) => {
 
-    const imagepath = `/assets/${id}.jpg`
+    const imagePath = `/assets/${id}.jpg`
 
-    console.log(first_apprearance, alter_ego, publisher,characters);
     return (
         // <div className="row-sass">
             <div className="example-2 card-sass">
                 <div className="wrapper-sass">
-                    <img src={imagepath} className="hero-card-img" alt={superhero}/>
+                    <img src={imagePath} className="hero-card-img" alt={superhero}/>
                     <div className="data-sass">
                         <div className="content-sass">
                             <span className="publisher">{publisher}</span>
-                            <h1 className="title"><a href="#">{superhero}</a></h1>
+                            <h1 className="title">{superhero}</h1>
                             <p className="text">{alter_ego}</p>
                             {
                                 ( alter_ego !== characters ) &&
                                 <p className="text">{characters}</p>
                             }
+                            <p className='text'>{first_appearance}</p>
                             <Link to={`/hero/${id}`} className="button">Read more</Link>
                         </div>
                     </div>

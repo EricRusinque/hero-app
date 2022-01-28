@@ -13,7 +13,10 @@ export const Navbar = () => {
 
     return (
         <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
-            
+            <div className='container' style={{
+                borderRight:"1px solid white",
+                borderLeft:"1px solid white"
+            }}>
             <Link 
                 className="navbar-brand" 
                 to="/"
@@ -55,6 +58,7 @@ export const Navbar = () => {
                         Logout
                     </button>
                 </ul>
+            </div>
             </div>
         </nav>
     )
