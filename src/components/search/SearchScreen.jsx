@@ -1,8 +1,66 @@
+import { useNavigate, useLocation } from "react-router-dom";
+import { useForm } from "../../hooks/useForm";
+import { getHeroesByName } from "../../selectors/getHeroesByName";
+import { HeroCard } from "../hero/HeroCard";
+import queryString from "query-string"
+import './_search-screen.scss'
 
 export const SearchScreen = () => {
+
+    const navigate = useNavigate();
+    const location = useLocation();
+    
+    const { q = '' } = queryString.parse(location.search)
+
+
+    const [{searchText}, handleInputChange] = useForm({
+        searchText: q,
+    });
+
+
+    const heroesFilter = getHeroesByName(searchText)
+
+    const handleSearch = (e) => {
+        e.preventDefault()
+        navigate(`?q=${ searchText }`)
+    }
     return (
-        <div>
-            <h1>Search Screen</h1>
+        <div className="search-container">
+            <h1>Search:</h1>
+            <hr/>
+
+            <div className="search-hero-form">
+
+                <form onSubmit={ handleSearch }>
+                    <input
+                        type="text"
+                        placeholder="Buscar un heroe"
+                        name="searchText"
+                        onChange={handleInputChange}
+                        autoComplete="off"
+                        value={searchText}
+                    />
+                    <button
+                    
+                    >
+                        Buscar...
+                    </button>
+                </form>
+            </div>
+            <div className="container-results">
+                <h4>Resultados</h4>
+                <hr/>
+               
+                    {
+                        heroesFilter.map( hero => (
+                            <HeroCard
+                                key={hero.id}
+                                {...hero}
+                            />
+                        ))
+                    }
+
+                </div>
         </div>
     )
 };

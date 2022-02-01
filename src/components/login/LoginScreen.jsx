@@ -1,4 +1,5 @@
 import './index.css'
+import './_login-screen.scss'
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -14,6 +15,7 @@ export const LoginScreen = () => {
   
     return (
         <form className="box">
+            <div className="form-opacity">
             <h1>Login</h1>
             <input 
                 type="text" 
@@ -33,6 +35,7 @@ export const LoginScreen = () => {
             >
                 Submit
             </button>
+            </div>
         </form>
     )
 };

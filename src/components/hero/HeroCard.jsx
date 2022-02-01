@@ -14,7 +14,7 @@ export const HeroCard = ({
 
     return (
         // <div className="row-sass">
-            <div className="example-2 card-sass">
+            <div className="card-hero-container card-sass scale-up-ver-center">
                 <div className="wrapper-sass">
                     <img src={imagePath} className="hero-card-img" alt={superhero}/>
                     <div className="data-sass">

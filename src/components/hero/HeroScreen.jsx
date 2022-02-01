@@ -1,16 +1,23 @@
-import { Navigate, useParams } from "react-router-dom";
+import { useMemo } from "react";
+import { Navigate, useNavigate, useParams } from "react-router-dom";
 import { getHeroById } from "../../selectors/getHeroById";
 import './_hero-screen.scss'
 export const HeroScreen = () => {
 
+    const navigate = useNavigate();
     const { heroId } = useParams();
 
-    const hero = getHeroById(heroId);
-
+    const hero = useMemo(() => getHeroById(heroId), [heroId]);
+    
+    
     const { alter_ego, superhero, characters, publisher, first_appearance } = hero;
 
     if (!hero) {
         return <Navigate to="/" />
+    }
+
+    const handleReturn = () => {
+        navigate(-1)
     }
 
     const imagePath = `/assets/${hero.id}.jpg`
@@ -18,7 +25,7 @@ export const HeroScreen = () => {
         <div>
             <div className="hero-screen">
 
-                <img src={imagePath} alt={hero.superhero}/>
+                <img src={imagePath} alt={superhero}/>
                 <ul className="hero-details">
                     <li className="cute-bit publisher-hero-screen grow-left">
                         <h2>
@@ -27,7 +34,6 @@ export const HeroScreen = () => {
                         </h2>
                         <p>
                             {publisher}
-
                         </p>
                     </li>
                     <li className="cute-bit superhero-hero-screen grow-right">
@@ -62,9 +68,13 @@ export const HeroScreen = () => {
                             {first_appearance}
                         </p>
                     </li>
-
                 </ul>
-
+                <button 
+                    className="button-return-screen"
+                    onClick={handleReturn}    
+                >
+                    Return
+                </button>
             </div>
         </div>
     )

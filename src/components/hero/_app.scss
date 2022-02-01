@@ -38,8 +38,33 @@ h1 {
   display: flex;
   width: 100%;
   flex-wrap: wrap;
-  justify-content: space-between;
 }
+
+.scale-up-ver-center {
+	-webkit-animation: scale-up-ver-center 1.0s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	        animation: scale-up-ver-center 1.0s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+@-webkit-keyframes scale-up-ver-center {
+  0% {
+    -webkit-transform: scaleY(0.4);
+            transform: scaleY(0.4);
+  }
+  100% {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+  }
+}
+@keyframes scale-up-ver-center {
+  0% {
+    -webkit-transform: scaleY(0.4);
+            transform: scaleY(0.4);
+  }
+  100% {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+  }
+}
+
 
 .row-sass {
   display: flex;
@@ -56,8 +81,8 @@ h1 {
 // Base styles
 .card-sass {
   float: left;
-  padding: 10px 1.2rem;
-  width: 33%;
+  margin: 20px;
+  width: 350px;
   .menu-content {
     @include cf;
     margin: 0;
@@ -83,12 +108,14 @@ h1 {
     min-height: 540px;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 19px 38px rgba($black, 0.3), 0 15px 12px rgba($black, 0.2);
+    box-shadow: 0 5px 10px rgba(#000, 0.3), 0 15px 12px rgba(#000, 0.2);box-shadow: 0 5px 12px rgb(255 0 0 / 30%), 0 15px 12px rgb(0 0 0 / 20%);
     &:hover {
+      box-shadow: 0 10px 15px rgba(#000, 0.3), 0 15px 40px rgba(#000, 0.2);box-shadow: 0 15px 40px rgb(255 0 0 / 30%), 0 15px 12px rgb(0 0 0 / 20%);
       .data-sass {
         transform: translateY(0);
       }
     }
+  
   }
   .data-sass{
     position: absolute;
@@ -125,7 +152,7 @@ h1 {
 
 
 //styles Card
-.example-2 {
+.card-hero-container {
   .wrapper-sass {
     &:hover {
       .menu-content {
