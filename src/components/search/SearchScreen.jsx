@@ -4,6 +4,7 @@ import { getHeroesByName } from "../../selectors/getHeroesByName";
 import { HeroCard } from "../hero/HeroCard";
 import queryString from "query-string"
 import './_search-screen.scss'
+import { useMemo } from "react";
 
 export const SearchScreen = () => {
 
@@ -18,7 +19,7 @@ export const SearchScreen = () => {
     });
 
 
-    const heroesFilter = getHeroesByName(searchText)
+    const heroesFilter = useMemo(() => getHeroesByName(q), [q]);
 
     const handleSearch = (e) => {
         e.preventDefault()
@@ -26,9 +27,7 @@ export const SearchScreen = () => {
     }
     return (
         <div className="search-container">
-            <h1>Search:</h1>
-            <hr/>
-
+            
             <div className="search-hero-form">
 
                 <form onSubmit={ handleSearch }>
@@ -50,6 +49,12 @@ export const SearchScreen = () => {
             <div className="container-results">
                 <h4>Resultados</h4>
                 <hr/>
+                {
+                    ( q === '')
+                        ? <div className="search-hero-error scale-up-center ">Buscar un heroe</div>
+                        : ( heroesFilter.length === 0 )
+                            && <div className="search-hero-error scale-up-center"> No hay resultados de: { q } </div>
+                }
                
                     {
                         heroesFilter.map( hero => (
