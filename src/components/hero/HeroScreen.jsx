@@ -2,6 +2,8 @@ import { useMemo } from "react";
 import { Navigate, useNavigate, useParams } from "react-router-dom";
 import { getHeroById } from "../../selectors/getHeroById";
 import './_hero-screen.scss'
+
+
 export const HeroScreen = () => {
 
     const navigate = useNavigate();

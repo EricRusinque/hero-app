@@ -38,10 +38,10 @@ input[type="text"]  {
     display: block;
     margin: 10px;
     text-align: center;
-    border: 2px solid rgba(255, 0, 0, 0.5) ;
+    border: 2px solid white;
     padding: 14px 10px;
     width: 200px;
-    outline: none;
+    outline: 2px solid rgba(255, 0, 0, 0.5) ;
     color: white;
     border-radius: 2px;
     transition: 0.25s;

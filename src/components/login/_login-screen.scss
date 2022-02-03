@@ -6,19 +6,17 @@ body {
 }
 
 .box {
-    width: 500px;
-    height: 450px;
+    width: 710px;
+    height: 650px;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    /* background-color: #191919; */
     text-align: center;
     background-image: url('https://www.teahub.io/photos/full/321-3213730_marvel-and-dc-unite.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    border: 1px solid black;
     border-radius: 2px;
     box-shadow: 10px 10px 24px 9px rgba(0,0,0,0.82);
     .form-opacity {
@@ -26,6 +24,7 @@ body {
         height: 100%;
     }
     h1 {
+        padding: 50px;
         font-size: 50px;
         color: white;
         text-transform: uppercase;
@@ -37,10 +36,10 @@ body {
        display: block;
        margin: 40px auto;
        text-align: center;
-       border: 2px solid rgba(255, 0, 0, 0.5) ;
        padding: 14px 10px;
        width: 200px;
-       outline: none;
+       border: 2px solid white;
+       outline:  2px solid rgba(255, 0, 0, 0.5) ;
        color: white;
        border-radius: 2px;
        transition: 0.25s;
@@ -65,10 +64,10 @@ body {
         display: block;
         margin: 40px auto;
         text-align: center;
-        border: 2px solid rgba(65, 56, 146, 0.5) ;
+        border:  2px solid white;
         padding: 14px 10px;
         width: 200px;
-        outline: none;
+        outline: 2px solid rgba(65, 56, 146, 0.5);
         color: white;
         border-radius: 2px;
         transition: 0.25s;
@@ -88,11 +87,7 @@ body {
             // width: 280px;
         }
      }
-    
-    //  input[type="text"]:focus,.box input[type = "password"]:focus {
-    //     width: 280px;
-    //     border-color: #ac2c2c;
-    // }
+
     button {
         color: #fff !important;
         font-size: 20px;
