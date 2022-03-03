@@ -13,8 +13,6 @@ export const LoginScreen = () => {
 
     const handleLogin = () => {
 
-
-
         const action = {
             type: types.login,
             payload: 'Eric'  
@@ -54,14 +52,4 @@ export const LoginScreen = () => {
         </form>
     )
 };
-   // <div className="container mt-5">
-        //     <h1>Login</h1>
-        //     <hr/>
-
-        //     <button
-        //         onClick={handleLogin}
-        //         className="btn btn-primary"
-        //     >
-        //         Login
-        //     </button>
-        // </div>
+  
